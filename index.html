@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dibah Husseini Kanu — Biotechnologist</title>
+<meta name="description" content="Dibah Husseini Kanu — Biotechnologist working on antimicrobial resistance and cholera surveillance in Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1EEE4;
+    --paper-alt:#E8E4D5;
+    --ink:#1C201D;
+    --ink-soft:#4A4F49;
+    --agar:#33594C;
+    --agar-deep:#1F3B32;
+    --gold:#A97C2F;
+    --line:#C9C2AC;
+    --white:#FBFAF6;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:450;
+    margin:0;
+    color:var(--ink);
+  }
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    font-size:0.72rem;
+  }
+  a{color:inherit;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 28px;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(241,238,228,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;}
+  .navlinks{display:flex;gap:26px;}
+  .navlinks a{
+    text-decoration:none;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:border-color .2s, color .2s;
+  }
+  .navlinks a:hover{color:var(--agar-deep);border-color:var(--agar-deep);}
+  .navtoggle{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--ink);}
+
+  /* HERO */
+  header.hero{
+    padding:96px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero .wrap{position:relative;z-index:2;}
+  .eyebrow{
+    color:var(--agar);
+    margin-bottom:18px;
+    display:inline-block;
+  }
+  h1.name{
+    font-size:clamp(2.4rem,6vw,4rem);
+    line-height:1.05;
+    margin-bottom:22px;
+    max-width:11ch;
+  }
+  .hero-lede{
+    max-width:52ch;
+    color:var(--ink-soft);
+    font-size:1.1rem;
+    margin-bottom:34px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:13px 22px;
+    border-radius:2px;
+    border:1px solid var(--ink);
+    transition:background .2s, color .2s;
+  }
+  .btn.solid{background:var(--agar-deep);color:var(--white);border-color:var(--agar-deep);}
+  .btn.solid:hover{background:var(--ink);}
+  .btn.ghost:hover{background:var(--ink);color:var(--white);}
+
+  /* growth curve svg */
+  .growth{
+    position:absolute;right:-40px;top:60px;width:52%;max-width:520px;opacity:0.9;
+  }
+  .growth path.curve{
+    fill:none;stroke:var(--agar);stroke-width:2;
+    stroke-dasharray:900;stroke-dashoffset:900;
+    animation:draw 2.4s ease forwards 0.3s;
+  }
+  .growth circle{fill:var(--gold);opacity:0;animation:pop .4s ease forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes pop{to{opacity:1;}}
+  @media (prefers-reduced-motion: reduce){
+    .growth path.curve{animation:none;stroke-dashoffset:0;}
+    .growth circle{animation:none;opacity:1;}
+  }
+
+  /* SECTION SHARED */
+  section{padding:64px 0;border-top:1px solid var(--line);}
+  section.alt{background:var(--paper-alt);}
+  .section-head{
+    display:flex;align-items:baseline;gap:16px;margin-bottom:38px;flex-wrap:wrap;
+  }
+  .section-head .mono{color:var(--gold);}
+  .section-head h2{font-size:1.8rem;}
+
+  /* ABOUT */
+  .about-grid{
+    display:grid;grid-template-columns:1.4fr 1fr;gap:48px;
+  }
+  .about-grid p{margin:0 0 16px;color:var(--ink-soft);}
+  .about-grid p:last-child{margin-bottom:0;}
+  .field-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:22px 24px;
+    align-self:start;
+  }
+  .field-card dt{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--gold);margin-top:16px;}
+  .field-card dt:first-child{margin-top:0;}
+  .field-card dd{margin:4px 0 0;font-size:0.95rem;}
+
+  /* RESEARCH */
+  .record{
+    display:grid;grid-template-columns:120px 1fr;gap:24px;
+    padding:24px 0;border-top:1px dashed var(--line);
+  }
+  .record:first-of-type{border-top:none;padding-top:0;}
+  .record .tag{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.05em;padding-top:3px;}
+  .record h3{font-size:1.15rem;margin-bottom:8px;}
+  .record p{color:var(--ink-soft);margin:0;}
+
+  /* CV / SKILLS */
+  .cv-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .cv-block h3{
+    font-size:0.95rem;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.05em;
+    color:var(--agar-deep);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--agar-deep);
+  }
+  .cv-item{margin-bottom:16px;}
+  .cv-item .role{font-weight:600;}
+  .cv-item .meta{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--ink-soft);}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .skill-tags span{
+    background:var(--white);border:1px solid var(--line);
+    padding:6px 12px;font-size:0.82rem;font-family:'IBM Plex Mono',monospace;
+  }
+
+  /* WRITING */
+  .writing-card{
+    background:var(--white);border:1px solid var(--line);padding:26px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .writing-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .writing-card h3{font-size:1.1rem;}
+  .writing-card p{color:var(--ink-soft);margin:0;font-size:0.95rem;}
+  .writing-card a.out{
+    margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;
+    text-transform:uppercase;color:var(--agar-deep);text-decoration:none;letter-spacing:0.04em;
+  }
+  .writing-card a.out:hover{text-decoration:underline;}
+  .writing-note{
+    margin-top:26px;color:var(--ink-soft);font-size:0.92rem;
+    border-left:3px solid var(--gold);padding-left:16px;
+  }
+
+  /* CONTACT */
+  .contact-inner{
+    display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;
+  }
+  .contact-inner h2{font-size:2rem;max-width:14ch;}
+  .email-link{
+    font-family:'IBM Plex Mono',monospace;font-size:1.1rem;
+    text-decoration:none;border-bottom:1px solid var(--ink);
+  }
+  footer{
+    padding:30px 0;text-align:center;color:var(--ink-soft);font-size:0.8rem;
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  @media (max-width:760px){
+    .navlinks{display:none;}
+    .navtoggle{display:block;}
+    .navlinks.open{
+      display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+    }
+    .navlinks.open a{padding:14px 28px;border-bottom:1px solid var(--line);}
+    .about-grid,.cv-cols,.writing-grid{grid-template-columns:1fr;}
+    .growth{display:none;}
+    header.hero{padding:64px 0 56px;}
+    .contact-inner{align-items:flex-start;}
+  }
+
+  :focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">D. H. Kanu</div>
+    <button class="navtoggle" aria-label="Toggle menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#cv">CV</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="growth" viewBox="0 0 400 220" aria-hidden="true">
+    <path class="curve" d="M10,190 C60,188 90,185 120,160 C160,128 170,80 220,55 C270,30 320,25 390,10" />
+    <circle cx="120" cy="160" r="4" style="animation-delay:1.2s"/>
+    <circle cx="220" cy="55" r="4" style="animation-delay:1.7s"/>
+    <circle cx="390" cy="10" r="4" style="animation-delay:2.2s"/>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow mono">Biotechnology · AMR &amp; Public Health Research</span>
+    <h1 class="name">Dibah Husseini Kanu</h1>
+    <p class="hero-lede">Biotechnology graduate working at the intersection of antimicrobial resistance and cholera surveillance in Nigeria — building toward a career leading AMR research and outbreak response.</p>
+    <div class="hero-actions">
+      <a class="btn solid" href="#cv">View CV</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">01</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I'm a Biotechnology graduate whose research centers on antimicrobial resistance (AMR) and <em>Vibrio cholerae</em>, with hands-on clinical placement experience at the Federal Medical Centre (FMC), Jalingo.</p>
+        <p>I'm currently serving as a corps member with the National Youth Service Corps (NYSC), while working toward graduate study and a long-term goal of leading AMR surveillance and cholera eradication initiatives in Nigeria.</p>
+        <p>Outside the lab, I write — mostly on family, society, and the things I notice in the spaces between science and everyday life.</p>
+      </div>
+      <dl class="field-card">
+        <dt>Based in</dt>
+        <dd>Nigeria</dd>
+        <dt>Field</dt>
+        <dd>Biotechnology · Microbiology · Public Health</dd>
+        <dt>Current status</dt>
+        <dd>NYSC Corps Member</dd>
+        <dt>Focus</dt>
+        <dd>Antimicrobial resistance, <em>Vibrio cholerae</em> research</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">02</span>
+      <h2>Research &amp; Placements</h2>
+    </div>
+
+    <div class="record">
+      <span class="tag">Research</span>
+      <div>
+        <h3>Antimicrobial Resistance &amp; <em>Vibrio cholerae</em></h3>
+        <p>Undergraduate research focused on AMR patterns and cholera-causing bacteria, forming the foundation of my continued interest in outbreak surveillance and resistance mapping in Nigerian public health settings.</p>
+      </div>
+    </div>
+
+    <div class="record">
+      <span class="tag">Clinical placement</span>
+      <div>
+        <h3>Federal Medical Centre (FMC), Jalingo</h3>
+        <p>Ward-based clinical placement providing direct exposure to laboratory diagnostics, patient care pathways, and the practical realities of infectious disease management in a Nigerian tertiary hospital.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="cv">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">03</span>
+      <h2>CV &amp; Skills</h2>
+    </div>
+    <div class="cv-cols">
+      <div class="cv-block">
+        <h3>Experience</h3>
+        <div class="cv-item">
+          <div class="role">NYSC Corps Member</div>
+          <div class="meta">National Youth Service Corps · Ongoing, through 2027</div>
+        </div>
+        <div class="cv-item">
+          <div class="role">Clinical Placement, Ward Rotation</div>
+          <div class="meta">Federal Medical Centre, Jalingo</div>
+        </div>
+        <div class="cv-item">
+          <div class="role">Undergraduate Researcher</div>
+          <div class="meta">Modibbo Adama University · AMR &amp; <em>Vibrio cholerae</em></div>
+        </div>
+      </div>
+      <div class="cv-block">
+        <h3>Education</h3>
+        <div class="cv-item">
+          <div class="role">B.Sc. Biotechnology</div>
+          <div class="meta">Modibbo Adama University, Yola · 2024/25 session</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-block" style="margin-top:36px;">
+      <h3>Skills</h3>
+      <div class="skill-tags">
+        <span>Microbiology techniques</span>
+        <span>Bioinformatics</span>
+        <span>AMR surveillance methods</span>
+        <span>Clinical laboratory practice</span>
+        <span>Scientific writing</span>
+        <span>Research design</span>
+        <span>Data analysis (Excel)</span>
+        <span>MS Office / Google Workspace</span>
+        <span>Report &amp; proposal writing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="writing" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">04</span>
+      <h2>Writing</h2>
+    </div>
+    <div class="writing-grid">
+      <div class="writing-card">
+        <h3>Essays on family &amp; society</h3>
+        <p>Reflections on family dynamics, community, and the quieter parts of Nigerian life — written alongside my scientific work.</p>
+        <a class="out" href="#" target="_blank" rel="noopener">Read on Gumroad →</a>
+      </div>
+      <div class="writing-card">
+        <h3>Notes from the field</h3>
+        <p>Short-form writing drawn from NYSC service, clinical placements, and life between camp and career.</p>
+        <a class="out" href="#" target="_blank" rel="noopener">Read on Gumroad →</a>
+      </div>
+    </div>
+    <p class="writing-note">Links above are placeholders — replace the <code>href="#"</code> with your actual Gumroad page links once ready.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-inner">
+    <h2>Let's talk science, writing, or opportunity.</h2>
+    <a class="email-link" href="mailto:dibahhusseini@gmail.com">dibahhusseini@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Dibah Husseini Kanu</div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
